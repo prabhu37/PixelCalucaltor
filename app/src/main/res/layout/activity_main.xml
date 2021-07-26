@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/aqua"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pixel calculator"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:textSize="40px"
+        android:id="@+id/tvTitle"
+        android:layout_marginTop="80px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="30px"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        android:id="@+id/valuesLayout">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/etValue"
+            android:layout_weight="1"
+            android:padding="20px"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:inputType="number|phone"
+            android:imeOptions="actionDone"
+            android:background="@drawable/border"
+            android:textColor="@color/black"
+            android:textSize="30px"
+            android:autofillHints="null" />
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="20px"
+            android:theme="@style/Widget.AppCompat.DropDownItem.Spinner"
+            android:id="@+id/dpTypeSpinner"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="20px"
+            android:layout_height="wrap_content"
+            android:theme="@style/Widget.AppCompat.DropDownItem.Spinner"
+            android:id="@+id/dpBinsSpinner"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit"
+        android:layout_marginTop="50px"
+        android:layout_marginBottom="50px"
+        app:layout_constraintTop_toBottomOf="@+id/valuesLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="30px"
+        android:textColor="@color/white"
+        android:text="Submit"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="200px"
+        android:layout_marginStart="30px"
+        android:layout_marginEnd="30px"
+        app:layout_constraintTop_toBottomOf="@+id/submit">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="DPI Bins"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Px"
+                android:id="@+id/tvSizeTitle"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="LDPI"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/ldpiValue"
+                android:gravity="center"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="MDPI"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="center"
+                android:background="@drawable/border"
+                android:padding="20px"
+               android:id="@+id/mdpiValue"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="TVDPI"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="center"
+                android:id="@+id/tvdpiValue"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="HDPI"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="center"
+                android:id="@+id/hdpiValue"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="XHDPI"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="center"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:id="@+id/xHdpiValue"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="XXHDPI"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="center"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:id="@+id/xxHdpiValue"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="XXXHDPI"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="center"
+                android:background="@drawable/border"
+                android:padding="20px"
+                android:id="@+id/xxxHdpiValue"
+                android:layout_weight="1"
+                android:textSize="32px"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
